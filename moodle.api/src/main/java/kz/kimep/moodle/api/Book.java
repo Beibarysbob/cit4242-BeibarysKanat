@@ -5,3 +5,4 @@ public record Book(String title, int pages) {
         return pages > 300;
     }
 }
+

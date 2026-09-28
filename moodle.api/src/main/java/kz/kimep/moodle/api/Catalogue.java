@@ -21,3 +21,4 @@ public final class Catalogue {
         return books.stream().filter(Book::isLong).count();
     }
 }
+
