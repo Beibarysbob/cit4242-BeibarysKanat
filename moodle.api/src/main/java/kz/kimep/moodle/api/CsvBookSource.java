@@ -27,7 +27,11 @@ public class CsvBookSource implements BookSource {
             return reader.lines()
                     .filter(line -> !line.isBlank())
                     .map(line -> line.split(";"))
-                    .map(parts -> new Book(parts[0], Integer.parseInt(parts[1])))
+                    .map(parts -> new Book(
+                            parts[0],
+                            parts[1],
+                            Integer.parseInt(parts[2])
+                    ))
                     .toList();
         } catch (IOException e) {
             throw new IllegalStateException("Could not read resource: " + resource, e);

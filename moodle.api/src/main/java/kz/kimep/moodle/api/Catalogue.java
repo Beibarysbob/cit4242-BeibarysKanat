@@ -18,7 +18,16 @@ public final class Catalogue {
     }
 
     public long countLongBooks() {
-        return books.stream().filter(Book::isLong).count();
+        return books.stream()
+                .filter(Book::isLong)
+                .count();
+    }
+
+    public List<String> titlesBy(String author) {
+        return books.stream()
+                .filter(book -> book.author().equals(author))
+                .map(Book::title)
+                .sorted()
+                .toList();
     }
 }
-
